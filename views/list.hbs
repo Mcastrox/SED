@@ -1,0 +1,26 @@
+<h3>
+    <a href="/" class="btn btn-danger">
+    Ingresar nuevo vuelo</a>
+</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Destino del vuelo</th>
+            <th>Precio del vuelo ($)</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+<tbody>
+    {{#each list}}
+    <tr>
+        <td>{{this.destination}}</td>
+        <td>{{this.price}}</td>
+        <td>
+            <a href="/{{this._id}}">Actualizar</a>
+            <a href="/delete/{{this._id}}" onclick="return confirm('¿Quieres borrar el elemento?');">
+            Borrar </i></a>
+        </td>
+    </tr>
+    {{/each}}
+</tbody>
+</table>
